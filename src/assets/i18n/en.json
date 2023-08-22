@@ -1,0 +1,10 @@
+{
+    "dir": "ltr",
+    "login": {
+      "title": "Login",
+      "username": "Username",
+      "password": "Password",
+      "loginButton": "Login",
+      "invalidCredentials": "Invalid username or password."
+    }
+  }

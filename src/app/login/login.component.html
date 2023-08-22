@@ -1,0 +1,29 @@
+<!-- src/app/login/login.component.html -->
+<button mat-icon-button (click)="switchLanguage('en')" matTooltip="English">
+    <mat-icon>language</mat-icon>
+  </button>
+  <button mat-icon-button (click)="switchLanguage('ar')" matTooltip="العربية">
+    <mat-icon>language</mat-icon>
+  </button>
+<mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>{{ 'login.title' | translate }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="login()" #loginForm="ngForm">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>{{ 'login.username' | translate }}</mat-label>
+          <input matInput required [(ngModel)]="username" name="username">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>{{ 'login.password' | translate }}</mat-label>
+          <input matInput type="password" required [(ngModel)]="password" name="password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid">
+            {{ 'login.loginButton' | translate }}
+        </button>
+      </form>
+          <p *ngIf="loginError" class="error-message">{{ 'login.invalidCredentials' | translate }}</p>
+    </mat-card-content>
+  </mat-card>
+  

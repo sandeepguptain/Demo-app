@@ -1,0 +1,10 @@
+{
+    "dir": "rtl",
+    "login": {
+      "title": "تسجيل الدخول",
+      "username": "اسم المستخدم",
+      "password": "كلمة المرور",
+      "loginButton": "تسجيل الدخول",
+      "invalidCredentials": "اسم المستخدم أو كلمة المرور غير صحيحة."
+    }
+  }
