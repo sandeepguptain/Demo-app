@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-login',
@@ -15,14 +14,8 @@ export class LoginComponent {
 
   constructor(
     private authService: AuthService,
-    private router: Router,
-    private translationService: TranslationService
+    private router: Router
   ) {}
-
-  switchLanguage(lang: string): void {
-    this.translationService.setLanguage(lang);
-  }
-
 
   login(): void {
     if (this.authService.login(this.username, this.password)) {
