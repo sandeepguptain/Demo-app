@@ -1,0 +1,12 @@
+.content{
+    padding: 20px;
+    box-sizing: border-box;
+
+    .mat-mdc-card-image {
+        height: 300px;
+        object-fit: contain;
+    }
+    .box{
+        padding: 10px;
+    }
+}

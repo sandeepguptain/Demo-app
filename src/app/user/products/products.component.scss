@@ -1,0 +1,19 @@
+.content{
+    padding: 20px;
+    box-sizing: border-box;
+
+    .mat-mdc-card-image{
+        height: 200px;
+        width: 80%;
+        object-fit: contain;
+    }
+    
+    .mat-mdc-card-title {
+        font-size: 14px;
+        line-height: 18px;
+        max-width: 200px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}

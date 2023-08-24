@@ -43,4 +43,8 @@ export class AuthService {
     this.GetLoggedIn();
     this.router.navigate(['/login'])
   }
+
+  getLoggedInUser(){
+    return this.loggedInUser
+  }
 }

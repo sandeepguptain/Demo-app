@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+    <div>DemoApp.</div>
+    <div class="toggle-button" >
+      <span fxHide.xs *ngIf="!(isLoggedIn | async)">Select Language: </span>
+      <button mat-flat-button (click)="switchLanguage('en')" matTooltip="English" *ngIf="!(isLoggedIn | async)">
+        English
+      </button>
+      <button mat-flat-button (click)="switchLanguage('ar')" matTooltip="العربية" *ngIf="!(isLoggedIn | async)">
+       العربية
+      </button>
+      <mat-icon (click)="logout()" matTooltip="Logout" *ngIf="isLoggedIn | async">logout</mat-icon>
+    </div>
+  </mat-toolbar>

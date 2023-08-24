@@ -9,9 +9,15 @@ import { AngularMaterialModule } from './angular-material.module';
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LayoutComponent } from './layout/layout.component';
+import { HeaderComponent } from './header/header.component';
+import { NavebarComponent } from './navebar/navebar.component';
+import { ProductsComponent } from './user/products/products.component';
+import { LoadingInterceptor } from './core/interceptors/auth.interceptor';
+import { ProductDetailComponent } from './user/product-detail/product-detail.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -21,7 +27,11 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     LoginComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
+    HeaderComponent,
+    NavebarComponent,
+    ProductsComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +48,11 @@ export function HttpLoaderFactory(http: HttpClient) {
       },
     }),
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoadingInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {

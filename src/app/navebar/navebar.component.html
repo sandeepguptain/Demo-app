@@ -1,0 +1,5 @@
+  <mat-nav-list fxLayout="row wrap"  fxLayoutAlign="center center" fxLayoutGap="10px">
+    <span>Category:</span>
+    <a mat-stroked-button color="primary" routerLink="/user/{{item}}"  (click)="getProducts(item)" class="link" *ngFor="let item of categoryList| async">{{item}}</a>
+</mat-nav-list>
+ 

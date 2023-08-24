@@ -1,17 +1,8 @@
-<mat-toolbar color="primary">
-  <span>DemoApp.</span>
-
-  <div class="toggle-button">
-    <span *ngIf="isDesktopOrTablet">Select Language: </span>
-    <button mat-flat-button (click)="switchLanguage('en')" matTooltip="English">
-      English
-    </button>
-    <button mat-flat-button (click)="switchLanguage('ar')" matTooltip="العربية">
-     العربية
-    </button>
-    | 
-    <mat-icon (click)="logout()" matTooltip="Logout" *ngIf="isLoggedIn | async">logout</mat-icon>
-  </div>
-
-</mat-toolbar>
+<app-header></app-header>
 <router-outlet></router-outlet>
+<mat-progress-spinner
+  *ngIf="isLoading$ | async"
+  color="primary"
+  mode="indeterminate"
+  diameter="30"
+></mat-progress-spinner>
