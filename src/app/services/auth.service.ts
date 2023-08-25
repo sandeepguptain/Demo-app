@@ -10,7 +10,7 @@ export class AuthService {
   private IsUserLogedIn = new BehaviorSubject<boolean>(false);
   IsUserLogedIn$ = this.IsUserLogedIn.asObservable();
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   login(username: string, password: string): boolean {
     if (username === 'admin' && password === 'admin') {
@@ -30,7 +30,7 @@ export class AuthService {
   }
 
   GetLoggedIn() {
-    this.IsUserLogedIn.next(this.isLoggedIn()) ;
+    this.IsUserLogedIn.next(this.isLoggedIn());
   }
 
 
@@ -44,7 +44,7 @@ export class AuthService {
     this.router.navigate(['/login'])
   }
 
-  getLoggedInUser(){
+  getLoggedInUser() {
     return this.loggedInUser
   }
 }

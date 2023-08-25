@@ -1,5 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,14 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 export class NavebarComponent implements OnInit {
   categoryList = this.productService.categoryList$
   categoryId: string = '';
-constructor(private productService: ProductService,  private route: ActivatedRoute,){}
+  constructor(private productService: ProductService, private route: ActivatedRoute,) { }
   ngOnInit(): void {
     this.productService.getCategories().subscribe();
     this.getProducts('electronics')
   }
 
-  
-  getProducts(item:string){
+
+  getProducts(item: string) {
     this.productService.getProducts(item).subscribe();
   }
 }

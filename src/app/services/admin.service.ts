@@ -1,8 +1,7 @@
-// src/app/services/product.service.ts
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, map, tap } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Product, Products } from '../core/modals/products.modal';
 
 @Injectable({

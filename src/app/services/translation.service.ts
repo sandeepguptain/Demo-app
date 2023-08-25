@@ -1,5 +1,3 @@
-// src/app/services/translation.service.ts
-
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
