@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { TranslationService } from './services/translation.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { AuthService } from './services/auth.service';
@@ -10,5 +10,10 @@ import { LoaderService } from './services/loader.service';
 })
 export class AppComponent {
   isLoading$ = this.loader.isLoading$
-constructor(private loader: LoaderService){}
+constructor(private loader: LoaderService, private cdr: ChangeDetectorRef){}
+ngAfterViewInit() {
+  this.isLoading$.subscribe(() => 
+    this.cdr.detectChanges()
+  );
+}
 }

@@ -1,0 +1,21 @@
+.admin {
+    padding: 20px;
+
+    .mat-mdc-outlined-button {
+        margin: 10px;
+        float: right
+    }
+
+    .table-container {
+        overflow-x: auto;
+        width: 100%;
+        max-width: 100%;
+
+        .product-image {
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            object-fit: contain;
+        }
+    }
+}

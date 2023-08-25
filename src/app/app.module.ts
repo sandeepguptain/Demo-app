@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -18,6 +18,7 @@ import { NavebarComponent } from './navebar/navebar.component';
 import { ProductsComponent } from './user/products/products.component';
 import { LoadingInterceptor } from './core/interceptors/auth.interceptor';
 import { ProductDetailComponent } from './user/product-detail/product-detail.component';
+import { AddProductComponent } from './admin/add-product/add-product.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -31,7 +32,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     NavebarComponent,
     ProductsComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserAnimationsModule,
     AngularMaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {

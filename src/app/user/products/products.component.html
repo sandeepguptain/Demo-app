@@ -9,7 +9,7 @@
 				<img mat-card-image [src]="dcard.image" class="product-image" />
 				<mat-card-content>
 					<p>
-						Price: ${{dcard.price}}
+						Price: {{dcard.price | currency}}
 					</p>
 				</mat-card-content>
 				<mat-card-actions fxLayoutGap="10px">

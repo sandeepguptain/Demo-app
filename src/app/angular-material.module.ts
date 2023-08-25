@@ -34,6 +34,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 const materialModules = [
@@ -71,6 +72,7 @@ const materialModules = [
   MatTooltipModule,
   MatProgressBarModule,
   FlexLayoutModule,
+  MatDialogModule
 ];
 
 @NgModule({
