@@ -26,6 +26,11 @@ export class AdminService {
     return this.http.delete<Product>(`${this.apiUrl}/products/${id}`)
   }
 
+  addProduct(product:Product): Observable<Product> {
+    const body = product
+    return this.http.post<Product>(`${this.apiUrl}/products`, body)
+  }
+
   getProductListValue(){
    return  this._productListWithLimit.value
   }

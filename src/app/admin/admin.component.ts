@@ -52,12 +52,14 @@ export class AdminComponent  {
     
       dialogRef.afterClosed().subscribe((result) => {
         if (result) {
-          if (product) {
-            this.snackBar.open(`Product ${product} ? 'Updated' : 'Addded' successfully`, 'close');
-            this.loadProducts(5);
-          } else {
-            this.snackBar.open('Something went wrong', 'close');
-          }
+          this.adminService.addProduct(result).subscribe((data)=>{
+            if (data) {
+              this.snackBar.open(`Product Updated/Addded successfully`, 'close');
+              this.loadProducts(5);
+            } else {
+              this.snackBar.open('Something went wrong', 'close');
+            }
+          })
         }
       })
   }
